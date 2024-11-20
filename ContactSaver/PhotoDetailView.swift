@@ -11,11 +11,11 @@ struct PhotoDetailView: View {
     let photo: NamedPhoto
     let image: UIImage?
     @Environment(\.dismiss) private var dismiss
-    @StateObject private var photoLibrary = PhotoLibrary()
+    @State private var photoLibrary = PhotoLibrary()
     
     var body: some View {
         VStack {
-            if let image = image {
+            if let image {
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFit()

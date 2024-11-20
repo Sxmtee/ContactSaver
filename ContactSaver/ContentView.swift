@@ -9,7 +9,7 @@ import PhotosUI
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var photoLibrary = PhotoLibrary()
+    @State private var photoLibrary = PhotoLibrary()
     @State private var isShowingPhotoPicker = false
     @State private var selectedItem: PhotosPickerItem?
     @State private var isShowingNameDialog = false

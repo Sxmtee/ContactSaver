@@ -15,12 +15,13 @@ struct NamedPhoto: Identifiable, Codable, Comparable {
     
     // Conformance to Comparable for sorting by name
     static func < (lhs: NamedPhoto, rhs: NamedPhoto) -> Bool {
-        lhs.name.localizedStandardCompare(rhs.name) == .orderedAscending
+        lhs.name < rhs.name
     }
 }
 
-class PhotoLibrary: ObservableObject {
-    @Published private(set) var photos: [NamedPhoto] = []
+@Observable
+class PhotoLibrary {
+    var photos: [NamedPhoto] = []
     private let savePathURL: URL
     
     init() {
